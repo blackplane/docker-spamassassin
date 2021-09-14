@@ -1,8 +1,6 @@
-FROM debian:stretch
+FROM debian:bullseye
 
-MAINTAINER Christian Luginbühl <dinkel@pimprecords.com>
-
-ENV SPAMASSASSIN_VERSION 3.4.1
+ENV SPAMASSASSIN_VERSION 3.4.6
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
@@ -13,7 +11,8 @@ RUN apt-get update && \
         libsocket-getaddrinfo-perl \
         pyzor \
         razor \
-        spamassassin=${SPAMASSASSIN_VERSION}* && \
+        gpg gpg-agent \
+        spamassassin && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
