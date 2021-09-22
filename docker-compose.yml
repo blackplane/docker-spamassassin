@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    spamassassin:
+        build:
+            context: .
+        image: spamassassin:latest
+        ports:
+        - 783:783
+
