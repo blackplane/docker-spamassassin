@@ -4,7 +4,7 @@ services:
     spamassassin:
         build:
             context: .
-        image: spamassasin:latest
+        image: blackplane/spamassasin:latest
         ports:
         - 783:783
 
